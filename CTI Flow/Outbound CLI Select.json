@@ -1,1 +1,238 @@
-{"actions":[{"id":"uid-0","type":"SE_Start","meta":{},"controls":{},"ports":{"done":"uid-33"},"position":[-2352,-352]},{"id":"uid-5","type":"SE_Log","meta":{},"controls":{"level":"debug","message":"error"},"ports":{"done":"uid-9"},"position":[-304,32]},{"id":"uid-9","type":"SE_End","meta":{},"controls":{},"ports":{},"position":[528,-96]},{"id":"uid-18","type":"SE_RestCall","meta":{},"controls":{"endpointUrl":"$.actions.uid-32.results.string","type":"POST","crossDomain":true},"ports":{"success":"uid-19","failure":"uid-5"},"position":[-416,-224]},{"id":"uid-19","type":"SE_Log","meta":{},"controls":{"level":"debug","message":"$.actions.uid-18.results.restPayload"},"ports":{"done":"uid-9"},"position":[16,-224]},{"id":"uid-21","type":"SE_TextJoinStrings","meta":{},"controls":{"value1":"$.actions.uid-23.results.value","value2":"$.actions.uid-34.results.value"},"ports":{"done":"uid-35"},"position":[-1040,-256]},{"id":"uid-23","type":"SE_SetProperty","meta":{},"controls":{"key":"initialURL","value":"https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/test?outboundIdentityName="},"ports":{"done":"uid-21"},"position":[-1376,-256]},{"id":"uid-28","type":"SE_SetProperty","meta":{},"controls":{"key":"addAgentUsername","value":"&agentUsername="},"ports":{"done":"uid-30"},"position":[-1456,80]},{"id":"uid-30","type":"SE_TextJoinStrings","meta":{},"controls":{"value1":"$.actions.uid-28.results.value","value2":"$.actions.uid-35.results.username"},"ports":{"done":"uid-32"},"position":[-992,80]},{"id":"uid-32","type":"SE_TextJoinStrings","meta":{},"controls":{"value1":"$.actions.uid-21.results.string","value2":"$.actions.uid-30.results.string"},"ports":{"done":"uid-18"},"position":[-896,288]},{"id":"uid-33","type":"SE_CoreGetPayload","meta":{},"controls":{"returnFields":["outboundIdentityName"]},"ports":{"done":"uid-34"},"position":[-2192,-352]},{"id":"uid-34","type":"SE_SetProperty","meta":{},"controls":{"key":"setOutboundIdentityName","value":"$.payload.outboundIdentityName"},"ports":{"done":"uid-23"},"position":[-1808,-272]},{"id":"uid-35","type":"SE_AgentGetConfiguration","meta":{},"controls":{},"ports":{"done":"uid-28"},"position":[-2000,80]}]}
+{
+  "actions": [
+    {
+      "id": "uid-0",
+      "type": "SE_Start",
+      "meta": {
+        
+      },
+      "controls": {
+        
+      },
+      "ports": {
+        "done": "uid-33"
+      },
+      "position": [
+        -2352,
+        -352
+      ]
+    },
+    {
+      "id": "uid-5",
+      "type": "SE_Log",
+      "meta": {
+        
+      },
+      "controls": {
+        "level": "debug",
+        "message": "error"
+      },
+      "ports": {
+        "done": "uid-9"
+      },
+      "position": [
+        -304,
+        32
+      ]
+    },
+    {
+      "id": "uid-9",
+      "type": "SE_End",
+      "meta": {
+        
+      },
+      "controls": {
+        
+      },
+      "ports": {
+        
+      },
+      "position": [
+        528,
+        -96
+      ]
+    },
+    {
+      "id": "uid-18",
+      "type": "SE_RestCall",
+      "meta": {
+        
+      },
+      "controls": {
+        "endpointUrl": "$.actions.uid-32.results.string",
+        "type": "POST",
+        "crossDomain": true
+      },
+      "ports": {
+        "success": "uid-19",
+        "failure": "uid-5"
+      },
+      "position": [
+        -416,
+        -224
+      ]
+    },
+    {
+      "id": "uid-19",
+      "type": "SE_Log",
+      "meta": {
+        
+      },
+      "controls": {
+        "level": "debug",
+        "message": "$.actions.uid-18.results.restPayload"
+      },
+      "ports": {
+        "done": "uid-9"
+      },
+      "position": [
+        16,
+        -224
+      ]
+    },
+    {
+      "id": "uid-21",
+      "type": "SE_TextJoinStrings",
+      "meta": {
+        
+      },
+      "controls": {
+        "value1": "$.actions.uid-23.results.value",
+        "value2": "$.actions.uid-34.results.value"
+      },
+      "ports": {
+        "done": "uid-35"
+      },
+      "position": [
+        -1040,
+        -256
+      ]
+    },
+    {
+      "id": "uid-23",
+      "type": "SE_SetProperty",
+      "meta": {
+        
+      },
+      "controls": {
+        "key": "initialURL",
+        "value": "https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/test?outboundIdentityName="
+      },
+      "ports": {
+        "done": "uid-21"
+      },
+      "position": [
+        -1376,
+        -256
+      ]
+    },
+    {
+      "id": "uid-28",
+      "type": "SE_SetProperty",
+      "meta": {
+        
+      },
+      "controls": {
+        "key": "addAgentUsername",
+        "value": "&agentUsername="
+      },
+      "ports": {
+        "done": "uid-30"
+      },
+      "position": [
+        -1456,
+        80
+      ]
+    },
+    {
+      "id": "uid-30",
+      "type": "SE_TextJoinStrings",
+      "meta": {
+        
+      },
+      "controls": {
+        "value1": "$.actions.uid-28.results.value",
+        "value2": "$.actions.uid-35.results.username"
+      },
+      "ports": {
+        "done": "uid-32"
+      },
+      "position": [
+        -992,
+        80
+      ]
+    },
+    {
+      "id": "uid-32",
+      "type": "SE_TextJoinStrings",
+      "meta": {
+        
+      },
+      "controls": {
+        "value1": "$.actions.uid-21.results.string",
+        "value2": "$.actions.uid-30.results.string"
+      },
+      "ports": {
+        "done": "uid-18"
+      },
+      "position": [
+        -896,
+        288
+      ]
+    },
+    {
+      "id": "uid-33",
+      "type": "SE_CoreGetPayload",
+      "meta": {
+        
+      },
+      "controls": {
+        "returnFields": [
+          "outboundIdentityName"
+        ]
+      },
+      "ports": {
+        "done": "uid-34"
+      },
+      "position": [
+        -2192,
+        -352
+      ]
+    },
+    {
+      "id": "uid-34",
+      "type": "SE_SetProperty",
+      "meta": {
+        
+      },
+      "controls": {
+        "key": "setOutboundIdentityName",
+        "value": "$.payload.outboundIdentityName"
+      },
+      "ports": {
+        "done": "uid-23"
+      },
+      "position": [
+        -1808,
+        -272
+      ]
+    },
+    {
+      "id": "uid-35",
+      "type": "SE_AgentGetConfiguration",
+      "meta": {
+        
+      },
+      "controls": {
+        
+      },
+      "ports": {
+        "done": "uid-28"
+      },
+      "position": [
+        -2000,
+        80
+      ]
+    }
+  ]
+}
